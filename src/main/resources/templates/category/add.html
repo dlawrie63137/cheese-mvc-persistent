@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head">
+    <meta charset="UTF-8"/>
+    <title th:text="${title}"></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body class="container">
+<nav th:replace="fragments :: navigation"></nav>
+<p></p><p></p>
+<form method="post" style="max-width: 680px;" th:object="${category}">
+    <div class="form-group">
+        <label th:for="name">Category:</label>
+        <input class="form-control" th:field="*{name}"/>
+        <i><span th:errors="*{name}" class="text-danger"></span></i>
+        <p></p>
+        <input type="submit" value="Add Category" />
+    </div>
+</form>
+
+</body>
+</html>
