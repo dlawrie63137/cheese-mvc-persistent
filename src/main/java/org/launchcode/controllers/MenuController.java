@@ -70,7 +70,6 @@ public class MenuController {
 
         model.addAttribute("title", "Add item to menu: " + menu.getName());
         model.addAttribute("form", form);
-        System.out.println(form.getCheese());
         return "menu/add-item";
     }
 
@@ -80,8 +79,6 @@ public class MenuController {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add item to menu: ");
             model.addAttribute("form", form);
-            System.out.println("Cheese ID is " + form.getCheeseId());
-            System.out.println("Menu ID is " + form.getMenuId());
             return "menu/add-item";
         }
         else {
@@ -89,7 +86,6 @@ public class MenuController {
             Menu theMenu = menuDao.findOne(form.getMenuId());
             theMenu.addItem(theCheese);
             menuDao.save(theMenu);
-            System.out.println("fuck it");
             return "redirect:/menu/view/" + theMenu.getId();
         }
     }
