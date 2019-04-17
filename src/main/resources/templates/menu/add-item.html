@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label th:for="cheeseId">Cheese:</label>
                 <select name="cheeseId">
-                    <option th:each="cheese : *{getCheese()}"
+                    <option th:each="cheese : *{cheeses}"
                             th:text="${cheese.name}"
                             th:value="${cheese.id}"></option>
                 </select>

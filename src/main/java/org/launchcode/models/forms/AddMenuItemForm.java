@@ -39,7 +39,7 @@ public class AddMenuItemForm {
         this.cheeseId = cheeseId;
     }
 
-    public Iterable<Cheese> getCheese() {
+    public Iterable<Cheese> getCheeses() {
         return cheeses;
     }
 
